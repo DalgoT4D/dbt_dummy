@@ -1,0 +1,11 @@
+sources:
+    - name: sheets
+      description: Tables here have the TAP glific bigquery data
+      schema: staging
+      tables:
+          - name: sheet1
+            identifier: sheet1
+            description: This has the data of quarter 1
+          - name: sheet2
+            identifier: sheet2
+            description: This has the data of quarter 2
