@@ -12,7 +12,8 @@ select
     WHEN '# of newborns born in supported clinics and catchment area receiving immediate newborn care (within 72 hours)' THEN '# of newborns'
     WHEN '# of children less than 12 months of age who received DPT3/Penta3 from USG-supported programs' THEN '# of children'
     WHEN '# of injectables provided through USG supported program to prevent unintended pregnancies' THEN '# of injectables'
-    END as "indicator_slug"
+    END as "indicator_slug",
+    "quarter"
 from {{ ref('merged') }}
 where indicator in (
     '# of service contacts at NGO partners clinics', 
