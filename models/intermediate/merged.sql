@@ -1,7 +1,7 @@
 {{ config(materialized="table", schema="intermediate") }}
 
 select
-    to_date("Month", 'MM/DD/YYYY') as "month",
+    cast(to_date("Month", 'MM/DD/YYYY') as datetime) as "month",
     "ngo",
     "spoc",
     "measure",
@@ -9,7 +9,7 @@ select
 from {{ source("sheets", "sheet1") }}
 union all
 select
-    to_date("Month", 'MM/DD/YYYY') as "month",
+    CAST(to_date("Month", 'MM/DD/YYYY') as datetime) as "month",
     "ngo",
     "spoc",
     "measure",
