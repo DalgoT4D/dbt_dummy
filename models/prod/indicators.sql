@@ -4,7 +4,8 @@ select
     "spoc",
     "ngo",
     "indicator", 
-    to_timestamp("month", 'MM/DD/YYYY') as "month", 
+    to_timestamp("month", 'MM/DD/YYYY') as "month",
+    TO_CHAR(to_timestamp("month", 'MM/DD/YYYY'), 'Month') as "month_slug",
     cast(regexp_replace("measure", ',', '', 'g') as float) as measure,
     CASE "indicator"
     WHEN '# of service contacts at NGO partners clinics' THEN '# of service contacts'
