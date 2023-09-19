@@ -6,7 +6,7 @@ select
     "spoc",
     "measure",
     "Indicator" as "indicator",
-    "Q1" as "quarter"
+    "quarter" as "Q1"
 from {{ source("sheets", "sheet1") }}
 union all
 select
@@ -15,7 +15,7 @@ select
     "spoc",
     "measure",
     "Indicator" as "indicator",
-    "Q2" as "quarter"
+    "quarter" as "Q2"
 from {{ source("sheets", "sheet2") }}
 
 
